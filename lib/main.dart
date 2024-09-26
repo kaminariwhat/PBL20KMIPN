@@ -13,19 +13,29 @@ class MyApp extends StatelessWidget {
       title: appTitle,
       home: Scaffold(
         appBar: AppBar(
-          title: const Text(
-            appTitle,
-            style: TextStyle(
-              fontSize: 18.0, // Menetapkan ukuran teks di sini
-              fontFamily: 'Poppins',
-              fontWeight: FontWeight.bold,
-              shadows: <Shadow>[
-                      Shadow(
-                        offset: Offset(2.0, 2.0),
-                        blurRadius: 1.0,
-                        color: Colors.black26,
-                      ),
-                    ],
+          title: const Text.rich(
+            TextSpan(
+              text: 'Hallo, Selamat Datang di ', // Teks biasa
+              style: TextStyle(
+                fontSize: 18.0,
+                fontFamily: 'Poppins',
+                fontWeight: FontWeight.bold,
+                shadows: <Shadow>[
+                  Shadow(
+                    offset: Offset(2.0, 2.0),
+                    blurRadius: 1.0,
+                    color: Colors.black26,
+                  ),
+                ],
+              ),
+              children: <TextSpan>[
+                TextSpan(
+                  text: 'BALAP-IN', 
+                  style: TextStyle(
+                    color: Colors.red, 
+                  ),
+                ),
+              ],
             ),
           ),
         ),
