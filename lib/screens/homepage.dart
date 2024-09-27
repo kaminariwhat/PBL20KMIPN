@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:balap_in/widgets/homewidget.dart';
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
@@ -11,6 +11,7 @@ class HomeScreen extends StatelessWidget {
           TextSpan(
             text: 'Hallo, Selamat Datang di ', 
             style: TextStyle(
+              color: Color.fromRGBO(5, 5, 5, 0.612),
               fontSize: 18.0,
               fontFamily: 'Poppins',
               fontWeight: FontWeight.bold,
@@ -33,8 +34,28 @@ class HomeScreen extends StatelessWidget {
           ),
         ),
       ),
-      body: const Center(
-        child: Text("This is the body"),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const SizedBox(height: 20), // Spacer antara teks dan tombol
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/tutorial');
+              },
+              child: const Text('Go to Tutorial'),
+            ),
+            const SizedBox(height: 20), // Spacer sebelum list view
+            Expanded(
+              child: ListView.builder(
+                itemCount: 4,
+                itemBuilder: (context, index) {
+                  return const HomeWidget();
+                },
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
