@@ -9,7 +9,7 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text.rich(
           TextSpan(
-            text: 'Hallo, Selamat Datang di ', 
+            text: 'Hallo, Selamat Datang di ',
             style: TextStyle(
               color: Color.fromRGBO(5, 5, 5, 0.612),
               fontSize: 18.0,
@@ -25,9 +25,9 @@ class HomeScreen extends StatelessWidget {
             ),
             children: <TextSpan>[
               TextSpan(
-                text: 'BALAP-IN', 
+                text: 'BALAP-IN',
                 style: TextStyle(
-                  color: Colors.red, 
+                  color: Colors.red,
                 ),
               ),
             ],
