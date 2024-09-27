@@ -9,7 +9,7 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text.rich(
           TextSpan(
-            text: 'Hallo, Selamat Datang di ', 
+            text: 'Hallo, Selamat Datang di ',
             style: TextStyle(
               fontSize: 18.0,
               fontFamily: 'Poppins',
@@ -24,17 +24,29 @@ class HomeScreen extends StatelessWidget {
             ),
             children: <TextSpan>[
               TextSpan(
-                text: 'BALAP-IN', 
+                text: 'BALAP-IN',
                 style: TextStyle(
-                  color: Colors.red, 
+                  color: Colors.red,
                 ),
               ),
             ],
           ),
         ),
       ),
-      body: const Center(
-        child: Text("This is the body"),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Text("This is the body"),
+            const SizedBox(height: 20), // Spacer antara teks dan tombol
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/tutorial');
+              },
+              child: const Text('Go to Tutorial'),
+            ),
+          ],
+        ),
       ),
     );
   }
