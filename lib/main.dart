@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'screens/homepage.dart';// Import file HomeScreen
 
 void main() => runApp(const MyApp());
 
@@ -7,39 +8,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const String appTitle = 'Hallo, Selamat Datang di BALAP-IN';
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: appTitle,
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text.rich(
-            TextSpan(
-              text: 'Hallo, Selamat Datang di ', // Teks biasa
-              style: TextStyle(
-                fontSize: 18.0,
-                fontFamily: 'Poppins',
-                fontWeight: FontWeight.bold,
-                shadows: <Shadow>[
-                  Shadow(
-                    offset: Offset(2.0, 2.0),
-                    blurRadius: 1.0,
-                    color: Colors.black26,
-                  ),
-                ],
-              ),
-              children: <TextSpan>[
-                TextSpan(
-                  text: 'BALAP-IN', 
-                  style: TextStyle(
-                    color: Colors.red, 
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
+      title: 'Hallo, Selamat Datang di BALAP-IN',
+      home: HomeScreen(),  // Gunakan HomeScreen di sini
     );
   }
 }
