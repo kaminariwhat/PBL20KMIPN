@@ -15,33 +15,68 @@ class HomeWidget extends StatelessWidget {
             color: const Color.fromARGB(255, 250, 204, 204),
             borderRadius: BorderRadius.circular(10), // Membuat sudut bulat
             boxShadow: [
-                const BoxShadow(
-                offset: const Offset(5.0, 5.0),
-                blurRadius: 5.0, // Mengatur radius bayangan
-                color: Colors.black26, // Warna bayangan
+              const BoxShadow(
+                offset: Offset(5.0, 5.0),
+                blurRadius: 5.0, 
+                color: Colors.black26, 
               ),
             ],
           ),
           child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
-              const Column(
-                children: [
-                  Text('Jalan berlobang parah sudah 5 bulan',
-                  style: TextStyle(
-                      fontSize: 8,
-                      fontFamily: "Poppins",
-                      fontWeight: FontWeight.bold,
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start, 
+                children: <Widget>[
+                  Container(
+                    margin: const EdgeInsets.only(
+                      left: 10,
+                      top: 15,
+                    ),
+                    child: const Text(
+                      'Jalan Berlobang parah sudah 5 bulan',
+                      style: TextStyle(
+                        fontSize: 8,
+                        fontFamily: "Poppins",
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
-                  Text('asjaj')
+                  Container(
+                    margin: const EdgeInsets.only(
+                      left: 10,
+                      top: 5,
+                    ),
+                    child: const Text(
+                      'Jalan Rusak',
+                      style: TextStyle(
+                        fontSize: 8,
+                        fontFamily: "Poppins",
+                      ),
+                    ),
+                  ),
+                  Container(
+                    width: 170,
+                    margin: const EdgeInsets.only(
+                      left: 10,
+                      top: 5,
+                    ),
+                    child: const Text(
+                      'Jl. Sudirman No.3, Sukajadi, Kec. Batam Kota, Kota Batam, Kepulauan Riau 29432',
+                      style: TextStyle(
+                        fontSize: 8,
+                        fontFamily: "Poppins",
+                      ),
+                    ),
+                  ),
                 ],
               ),
               SizedBox(
                 child: Container(
                   margin: const EdgeInsets.only(
-                    left: 6,
+                    left: 1, 
                     right: 5
-                  ),
+                    ),
                   height: 100,
                   width: 150,
                   decoration: BoxDecoration(
@@ -49,7 +84,7 @@ class HomeWidget extends StatelessWidget {
                     image: const DecorationImage(
                       image: AssetImage('assets/images/jalan.png'),
                       fit: BoxFit.cover,
-                      )
+                    ),
                   ),
                 ),
               ),
