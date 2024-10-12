@@ -42,7 +42,7 @@ class HomeScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Container(
-              height: 200,
+              height: 150,
               width: 420,
               margin: const EdgeInsets.only(
                 top: 20,
@@ -62,12 +62,12 @@ class HomeScreen extends StatelessWidget {
 
             const Padding(
             padding: EdgeInsets.only(
+              bottom: 10,
               top: 2,
-              bottom: 14,
             ),
               child: SizedBox(
-                width: 300,
-                height: 70, 
+                width: 340,
+                height: 40, 
                 child: TextField(
                   decoration: InputDecoration(
                     border: OutlineInputBorder(
@@ -77,6 +77,7 @@ class HomeScreen extends StatelessWidget {
                     ),
                     labelText: 'Cari Laporan',
                     prefixIcon: Icon(
+                      color: Colors.black,
                       Icons.search
                       ), 
                   ),
@@ -85,47 +86,164 @@ class HomeScreen extends StatelessWidget {
           ),
 
           
-          SizedBox(
-          width: 300,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context, 
-                    MaterialPageRoute(builder: (context) => Tutorial())
-                  );
-                },
-                child: Text('Cara melapor'),
-                style: ElevatedButton.styleFrom(
-                  shadowColor: Colors.black, 
-                  elevation: 5, 
+          Container(
+          width: 280,
+          height: 80,
+          margin: const EdgeInsets.only(
+            top: 5,
+          ),
+          child: SizedBox(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center, 
+              children: [
+                InkWell(
+                    onTap: () {
+                      Navigator.pushNamed(context, '/tutorial');
+                    },
+                    child: SizedBox(
+                      height: 80,
+                      child: Container(
+                        height: 80,
+                        width: 80,
+                        decoration: BoxDecoration(
+                          image: const DecorationImage(
+                            alignment: Alignment(0, -0.5),
+                            image: AssetImage('assets/images/question.png'),
+                          ),
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(10),
+                          boxShadow: const [
+                            BoxShadow(
+                              offset: Offset(5.0, 5.0),
+                              blurRadius: 5.0,
+                              color: Colors.black26,
+                            ),
+                          ],
+                        ),
+                        child: const Column(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            Text(
+                              'Cara Melapor',
+                              style: TextStyle(
+                                fontSize: 7,
+                                fontFamily: "Poppins",
+                              ),
+                            ),
+                            SizedBox(height: 7),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+
+
+                InkWell(
+                  onTap: () {
+                    Navigator.pushNamed(context, '');
+                  },
+                  child: Container(
+                  margin: const EdgeInsets.only(
+                    left: 20
+                    ),
+                  height: 80,
+                  width: 80,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10),
+                    boxShadow: const [
+                      BoxShadow(
+                        offset: Offset(5.0, 5.0),
+                        blurRadius: 5.0, 
+                        color: Colors.black26, 
+                      ),
+                    ],
+                  ),
+                    child: const Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        SizedBox(
+                          height: 58,
+                          width: 80,
+                          child: DecoratedBox(
+                            decoration: BoxDecoration(
+                            image: DecorationImage(
+                            alignment: Alignment(0, -0.5),
+                            image: AssetImage("assets/images/writing.png")
+                              ),
+                            ),
+                          ),
+                        ),
+                        Text(
+                          'Lapor sekarang',
+                          style: TextStyle(
+                            fontFamily: "Poppins",
+                            fontSize: 7,
+                          ),
+                          )
+                      ]
+                    ),
+                  ),
                 ),
-              ),
-              ElevatedButton(
-                onPressed: () {},
-                child: Text('Lapor Sekarang'),
-                style: ElevatedButton.styleFrom(
-                  shadowColor: Colors.black,
-                  elevation: 5,
+
+                InkWell(
+                  onTap: () {
+                    Navigator.pushNamed(context, '');
+                  },
+                  child: Container(
+                  margin: const EdgeInsets.only(
+                    left: 20
+                    ),
+                  height: 80,
+                  width: 80,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10),
+                    boxShadow: const [
+                      BoxShadow(
+                        offset: Offset(5.0, 5.0),
+                        blurRadius: 5.0, 
+                        color: Colors.black26, 
+                      )
+                    ]
+                  ),
+                  child: const Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      SizedBox(
+                        height: 60,
+                        width: 80,
+                        child: DecoratedBox(
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              image: AssetImage("assets/images/chart.png")
+                              )
+                          )
+                          ),
+                      ),
+                      Text(
+                        'Rekomendasi Urgensi',
+                          style: TextStyle(
+                          fontFamily: "Poppins",
+                          fontSize: 6.2,
+                        ),  
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-              ElevatedButton(
-                onPressed: () {},
-                child: Text('Rekomendasi Urgensi'),
-                style: ElevatedButton.styleFrom(
-                  shadowColor: Colors.black,
-                  elevation: 5,
-                ),
-              ),
-            ],
+                )
+
+              ],
+            ),
           ),
         ),
 
+        
             
 
-            const SizedBox(height: 20), 
+            const SizedBox(
+              height: 20
+              ), 
             Expanded(
               child: ListView.builder(
                 itemCount: 6,

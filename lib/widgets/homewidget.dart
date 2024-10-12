@@ -13,9 +13,9 @@ class HomeWidget extends StatelessWidget {
           width: 340,
           decoration: BoxDecoration(
             color: const Color.fromARGB(255, 250, 204, 204),
-            borderRadius: BorderRadius.circular(10), // Membuat sudut bulat
-            boxShadow: [
-              const BoxShadow(
+            borderRadius: BorderRadius.circular(10),
+            boxShadow: const [
+                BoxShadow(
                 offset: Offset(5.0, 5.0),
                 blurRadius: 5.0, 
                 color: Colors.black26, 
