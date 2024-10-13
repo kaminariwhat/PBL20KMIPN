@@ -1,4 +1,3 @@
-import 'package:balap_in/screens/tutorial.dart';
 import 'package:flutter/material.dart';
 import 'package:balap_in/widgets/homewidget.dart';
 class HomeScreen extends StatelessWidget {
@@ -232,18 +231,101 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
                 )
-
-              ],
+                ],
+              ),
             ),
           ),
-        ),
+          
 
+           const Padding(
+              padding: EdgeInsets.only(
+                top: 10,
+                bottom: 2,
+              ),
+              child: SizedBox(
+                height: 50,
+                width: 250,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+
+                      SizedBox(
+                        width: 120,
+                        height: 40,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                            'Jumlah Laporan',
+                            style: TextStyle(
+                              fontFamily: "Poppins",
+                              fontWeight: FontWeight.bold,
+                              fontSize: 7
+                            ),
+                            ),
+                            Text(
+                              '1609',
+                              style: TextStyle(
+                                fontFamily: "Poppins",
+                                fontWeight: FontWeight.bold,
+                                fontSize: 15
+                              ),
+                              )
+                          ],
+                        ),
+                      ),
+
+                      SizedBox(
+                      width: 10,
+                      height: 40,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Expanded(
+                            child: VerticalDivider(
+                              color: Colors.black,
+                              thickness: 1, 
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+
+
+                      SizedBox(
+                        width: 120,
+                        height: 40,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                            'Keluhan Dominan',
+                            style: TextStyle(
+                              fontFamily: "Poppins",
+                              fontWeight: FontWeight.bold,
+                              fontSize: 7
+                            ),
+                            ),
+                            SizedBox(height: 3,),
+                            Text(
+                              'Jalan Berlubang',
+                              style: TextStyle(
+                                fontFamily: "Poppins",
+                                fontWeight: FontWeight.bold,
+                                fontSize: 10
+                              ),
+                              ),
+                            SizedBox(height: 3,),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
         
             
 
-            const SizedBox(
-              height: 20
-              ), 
             Expanded(
               child: ListView.builder(
                 itemCount: 6,
