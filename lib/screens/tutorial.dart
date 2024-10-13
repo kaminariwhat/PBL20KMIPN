@@ -25,7 +25,9 @@ class Tutorial extends StatelessWidget {
           ),
         ),
       ),
-      body: Column(
+      body: Expanded(child: 
+      SingleChildScrollView(
+        child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.center, // Rata tengah untuk teks
         children: [
@@ -69,7 +71,9 @@ class Tutorial extends StatelessWidget {
             ),
           ),
         ],
-      ),
+        ),
+        )
+      )
     );
   }
 }

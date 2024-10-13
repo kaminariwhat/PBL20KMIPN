@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-
+const List<String> list = <String>['Jalan', 'Lampu Jalan', 'Jembatan'];
 class LaporScreen extends StatelessWidget {
   const LaporScreen({super.key});
 
@@ -32,6 +32,22 @@ class LaporScreen extends StatelessWidget {
             child: Column(
               children: [
                 const SizedBox(height: 20),
+                const SizedBox(
+                  width: 340,
+                  height: 30,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Text('Judul Pengaduan',
+                      style: TextStyle(
+                        fontFamily: "Poppins",
+                        fontWeight: FontWeight.bold,
+                        fontSize: 10
+                      ),
+                      )
+                    ],
+                  ),
+                ),
                 SizedBox(
                 height: 35,
                 width: 350,
@@ -43,25 +59,74 @@ class LaporScreen extends StatelessWidget {
                       BoxShadow(
                         color: Colors.black.withOpacity(0.2), 
                         blurRadius: 4, 
-                        offset: const Offset(0, 2), 
+                        offset: const Offset(1, 5), 
                       ),
                     ],
                   ),
                   child: const TextField(
-                    cursorHeight: 2,
                     decoration: InputDecoration(
                       border: InputBorder.none, 
-                      labelText: 'Judul Pengaduan. Cth: Jalan berlubang di jalan raya piayu',
-                      labelStyle: TextStyle(
+                      hintText: 'Jalan berlubang di jalan raya piayu',
+                      hintStyle: TextStyle(
                         fontFamily: "Poppins",
-                        fontSize: 9,
+                        fontSize: 10,
                       ),
-                      contentPadding: EdgeInsets.symmetric(vertical: 8, horizontal: 10), 
+                      contentPadding: EdgeInsets.only(
+                        top: -12,
+                        left: 9
+                        ), 
                     ),
                   ),
                 ),
-              )
-
+              ),
+              const SizedBox(height: 10),
+              const SizedBox(
+                width: 340,
+                  height: 30,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Text('Jenis Pengaduan',
+                      style: TextStyle(
+                        fontFamily: "Poppins",
+                        fontWeight: FontWeight.bold,
+                        fontSize: 10
+                      ),
+                      )
+                    ],
+                  ),
+              ),
+              SizedBox(
+                width: 350,
+                height: 35,
+                child: Container(
+                  decoration: BoxDecoration(
+                    color:const Color.fromARGB(255, 230, 228, 228), 
+                    borderRadius: BorderRadius.circular(5), 
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.2), 
+                        blurRadius: 4, 
+                        offset: const Offset(1, 5), 
+                      ),
+                    ],
+                  ),
+                  child: SizedBox(
+                    width: 350,
+                    height: 35,
+                    child: DropdownMenu<String>(
+                    hintText: 'Jenis Pengaduan',
+                    textStyle: const TextStyle(
+                      fontFamily: 'Poppins',
+                      fontSize: 10
+                    ),
+                    dropdownMenuEntries: list.map<DropdownMenuEntry<String>>((String value) {
+                      return DropdownMenuEntry<String>(value: value, label: value);
+                    }).toList(),
+                    ),
+                  ),
+                ),
+              ),
               ],
             ),
           )
