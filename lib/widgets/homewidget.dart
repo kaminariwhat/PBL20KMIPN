@@ -29,6 +29,7 @@ class HomeWidget extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start, 
                 children: <Widget>[
                   Container(
+                    width: 170,
                     margin: const EdgeInsets.only(
                       left: 10,
                       top: 15,
@@ -43,6 +44,7 @@ class HomeWidget extends StatelessWidget {
                     ),
                   ),
                   Container(
+                    width: 170,
                     margin: const EdgeInsets.only(
                       left: 10,
                       top: 5,

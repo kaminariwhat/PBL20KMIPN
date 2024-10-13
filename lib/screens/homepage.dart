@@ -44,7 +44,7 @@ class HomeScreen extends StatelessWidget {
               height: 150,
               width: 410,
               margin: const EdgeInsets.only(
-                top: 20,
+                top: 10,
                 bottom: 20,
               ),
               decoration: const BoxDecoration(
@@ -78,7 +78,11 @@ class HomeScreen extends StatelessWidget {
                         )
                     ),
                     labelText: 'Cari Laporan',
-                    prefixIcon: Icon(
+                    labelStyle: TextStyle(
+                      fontFamily: "Poppins",
+                      fontSize: 12
+                    ),
+                    suffixIcon: Icon(
                       color: Colors.black,
                       Icons.search
                       ), 
@@ -213,7 +217,7 @@ class HomeScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       SizedBox(
-                        height: 60,
+                        height: 57,
                         width: 80,
                         child: DecoratedBox(
                           decoration: BoxDecoration(
