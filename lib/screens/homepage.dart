@@ -13,7 +13,7 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text.rich(
           TextSpan(
-            text: 'Hallo, Selamat Datang di ',
+            text: 'Halo, Selamat Datang di ',
             style: TextStyle(
               color: Color.fromRGBO(5, 5, 5, 0.612),
               fontSize: 18.0,
