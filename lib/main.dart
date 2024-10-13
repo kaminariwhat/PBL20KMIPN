@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'screens/homepage.dart';
-import 'screens/tutorial.dart'; // Import file HomeScreen
+import 'screens/tutorial.dart';
+import 'screens/lapor.dart'; // Import file HomeScreen
 
 void main() => runApp(const MyApp());
 
@@ -15,6 +16,7 @@ class MyApp extends StatelessWidget {
       home: const HomeScreen(),
       routes: {
         '/tutorial': (context) => const Tutorial(),
+        '/lapor':(context) => const LaporScreen(),
       },
     );
   }

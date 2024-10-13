@@ -80,25 +80,41 @@ class HomeScreen extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    const Padding(
-                      padding: EdgeInsets.only(
+                    Padding(
+                      padding: const EdgeInsets.only(
                         bottom: 10,
                         top: 2,
                       ),
-                      child: SizedBox(
+                      child: Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(5), 
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black.withOpacity(0.2), 
+                              blurRadius: 4, 
+                              offset: const Offset(1, 7), 
+                            ),
+                          ],
+                        ),
+                        child: const SizedBox(
                         width: 340,
                         height: 40,
                         child: TextField(
+                          cursorColor: Colors.black,
+                          cursorHeight: 20,
                           decoration: InputDecoration(
+                            fillColor: Colors.white,
+                            filled: true,
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.all(
-                                Radius.circular(10),
+                                Radius.circular(9)
                               ),
+                            borderSide: BorderSide.none
                             ),
-                            labelText: 'Cari Laporan',
-                            labelStyle: TextStyle(
+                            hintText: 'Cari Laporan',
+                            hintStyle: TextStyle(
                               fontFamily: "Poppins",
-                              fontSize: 12,
+                              fontSize: 11,
                             ),
                             suffixIcon: Icon(
                               color: Colors.black,
@@ -107,6 +123,7 @@ class HomeScreen extends StatelessWidget {
                           ),
                         ),
                       ),
+                      )
                     ),
 
                     Container(
@@ -162,7 +179,7 @@ class HomeScreen extends StatelessWidget {
                             ),
                             InkWell(
                               onTap: () {
-                                Navigator.pushNamed(context, '');
+                                Navigator.pushNamed(context, '/lapor');
                               },
                               child: Container(
                                 margin: const EdgeInsets.only(left: 20),
