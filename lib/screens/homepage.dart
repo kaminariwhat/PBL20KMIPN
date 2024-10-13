@@ -42,17 +42,20 @@ class HomeScreen extends StatelessWidget {
           children: <Widget>[
             Container(
               height: 150,
-              width: 420,
+              width: 410,
               margin: const EdgeInsets.only(
                 top: 20,
                 bottom: 20,
               ),
-              decoration: BoxDecoration(
-                border: Border.all(
-                  color: Colors.black, 
-                  width: 2.0,
-                  ),
-                image: const DecorationImage(
+              decoration: const BoxDecoration(
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black,
+                    offset: Offset(-4.0, 5.0),
+                    blurRadius: 5.0,
+                  )
+                  ],
+                image: DecorationImage(
                 image: AssetImage('assets/images/peta.png'),
                 fit: BoxFit.cover,
               ), 
