@@ -5,6 +5,8 @@ const List<String> cuaca = <String>['Hujan Lebat', 'Hujan', 'Gerimis', 'Cerah'];
 
 String? selectedItem = 'Jalan'; 
 String? selectedCuaca = 'Hujan Lebat';
+
+double _currentSliderValue = 0;
 class LaporScreen extends StatefulWidget {
   const LaporScreen({super.key});
 
@@ -35,7 +37,8 @@ class _LaporScreenState extends State<LaporScreen> {
           ),
         ),
       ),
-      body: Column(
+      body: SingleChildScrollView(
+        child: Column(
         children: [
           Center(
             child: Column(
@@ -246,9 +249,25 @@ class _LaporScreenState extends State<LaporScreen> {
                                     width: 10,
                                   ),
                                   SizedBox(
-                                  width: 120,
+                                  width: 150,
                                   height: 35,
+                                  child: Container(
+                                    padding: EdgeInsets.only(
+                                      left: 20,
+                                    ),
+                                    decoration: BoxDecoration(
+                                    color: const Color.fromARGB(255, 230, 228, 228),
+                                    borderRadius: BorderRadius.circular(5),
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: Colors.black.withOpacity(0.2),
+                                        blurRadius: 4,
+                                        offset: const Offset(1, 5),
+                                      ),
+                                    ],
+                                  ),
                                   child: DropdownButton<String>(
+                                    icon: const Icon(Icons.arrow_drop_down_sharp),
                                     value: selectedCuaca,
                                     items: cuaca.map<DropdownMenuItem<String>>((String cuaca) {
                                       return DropdownMenuItem<String>(
@@ -268,6 +287,7 @@ class _LaporScreenState extends State<LaporScreen> {
                                     },
                                   ),
                                   ),
+                                  ),
                                 ],
                               ),
                               ),
@@ -280,6 +300,55 @@ class _LaporScreenState extends State<LaporScreen> {
                             SizedBox(
                               height: 80,
                               width: 150,
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  const Text(
+                                    'Persentase Kerusakan',
+                                    style: TextStyle(
+                                      fontFamily: "Poppins",
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 10,
+                                    ),
+                                  ),
+                                  const Padding(padding: EdgeInsets.only(top: 10)),
+                                  const SizedBox(
+                                    width: 10,
+                                  ),
+                                  SizedBox(
+                                    width: 150,
+                                    height: 35,
+                                    child: Container(
+                                      padding: const EdgeInsets.only(
+                                      left: 0,
+                                      right: 2
+                                      ),
+                                      decoration: BoxDecoration(
+                                      color: const Color.fromARGB(255, 230, 228, 228),
+                                      borderRadius: BorderRadius.circular(5),
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: Colors.black.withOpacity(0.2),
+                                          blurRadius: 4,
+                                          offset: const Offset(1, 5),
+                                        ),
+                                      ],
+                                    ),
+                                    child: Slider(
+                                      value: _currentSliderValue,
+                                      max: 100,
+                                      divisions: 5,
+                                      label: _currentSliderValue.round().toString(),
+                                      onChanged: (double value) {
+                                        setState(() {
+                                          _currentSliderValue = value;
+                                        });
+                                      },
+                                    ),
+                                    ),
+                                  )
+                                ],
+                              ),
                               )
                           ],
                         ),
@@ -294,6 +363,7 @@ class _LaporScreenState extends State<LaporScreen> {
           )
         ],
       ),
+      )
     );
   }
 }
