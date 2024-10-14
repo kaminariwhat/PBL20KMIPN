@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
 const List<String> jenis = <String>['Jalan', 'Lampu Jalan', 'Jembatan'];
+const List<String> cuaca = <String>['Hujan Lebat', 'Hujan', 'Gerimis', 'Cerah'];
 
+String? selectedItem = 'Jalan'; 
+String? selectedCuaca = 'Hujan Lebat';
 class LaporScreen extends StatefulWidget {
   const LaporScreen({super.key});
 
@@ -10,7 +13,6 @@ class LaporScreen extends StatefulWidget {
 }
 
 class _LaporScreenState extends State<LaporScreen> {
-  String? selectedItem = 'Jalan'; 
 
   @override
   Widget build(BuildContext context) {
@@ -124,7 +126,7 @@ class _LaporScreenState extends State<LaporScreen> {
                     child: Row(
                       children: [
                         const SizedBox(
-                          width: 10,
+                        width: 10,
                         ),
                         SizedBox(
                       width: 320,
@@ -212,6 +214,80 @@ class _LaporScreenState extends State<LaporScreen> {
                     ),
                   ),
                 ),
+                
+                Center(
+                  child: Column(
+                  children: [
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    SizedBox(
+                      height: 80,
+                      width: 350,
+                      child: Center(
+                        child: Row(
+                          children: [
+                            SizedBox(
+                              height: 80,
+                              width: 150,
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  const Text(
+                                    'Cuaca',
+                                    style: TextStyle(
+                                      fontFamily: "Poppins",
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 10,
+                                    ),
+                                  ),
+                                  const Padding(padding: EdgeInsets.only(top: 10)),
+                                  const SizedBox(
+                                    width: 10,
+                                  ),
+                                  SizedBox(
+                                  width: 120,
+                                  height: 35,
+                                  child: DropdownButton<String>(
+                                    value: selectedCuaca,
+                                    items: cuaca.map<DropdownMenuItem<String>>((String cuaca) {
+                                      return DropdownMenuItem<String>(
+                                        value: cuaca,
+                                        child: Text(cuaca, style: const TextStyle(
+                                          fontFamily: "Poppins",
+                                          fontSize: 10,
+                                        ),
+                                        ),
+                                      );
+                                    }).toList(),
+                                    onChanged: (String? cuaca) {
+                                      setState(() {
+                                        selectedCuaca = cuaca;
+                                      }
+                                      );
+                                    },
+                                  ),
+                                  ),
+                                ],
+                              ),
+                              ),
+
+                              SizedBox(
+                              height: 80,
+                              width: 50,
+                              ),
+
+                            SizedBox(
+                              height: 80,
+                              width: 150,
+                              )
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                  ),
+                )
 
               ],
             ),
