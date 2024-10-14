@@ -335,6 +335,7 @@ class _LaporScreenState extends State<LaporScreen> {
                                       ],
                                     ),
                                     child: Slider(
+                                      activeColor: const Color.fromARGB(255, 97, 96, 96),
                                       value: _currentSliderValue,
                                       max: 100,
                                       divisions: 5,
