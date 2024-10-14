@@ -252,7 +252,7 @@ class _LaporScreenState extends State<LaporScreen> {
                                   width: 150,
                                   height: 35,
                                   child: Container(
-                                    padding: EdgeInsets.only(
+                                    padding: const EdgeInsets.only(
                                       left: 20,
                                     ),
                                     decoration: BoxDecoration(
@@ -292,7 +292,7 @@ class _LaporScreenState extends State<LaporScreen> {
                               ),
                               ),
 
-                              SizedBox(
+                              const SizedBox(
                               height: 80,
                               width: 50,
                               ),
