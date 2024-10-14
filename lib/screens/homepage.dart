@@ -225,7 +225,7 @@ class HomeScreen extends StatelessWidget {
                             ),
                             InkWell(
                               onTap: () {
-                                Navigator.pushNamed(context, '');
+                                Navigator.pushNamed(context, '/splash');
                               },
                               child: Container(
                                 margin: const EdgeInsets.only(left: 20),

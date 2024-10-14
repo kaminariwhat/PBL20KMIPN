@@ -19,7 +19,7 @@ class SplashScreen extends StatelessWidget {
                   height: 200,
                   width: 200,
                   child: Image(
-                    image: AssetImage('assets/logo/wwww.png'),
+                    image: AssetImage('assets/images/wwww.png'),
                   ),
                 ),
                 SizedBox(height: 5), // Tambahkan const
@@ -42,7 +42,7 @@ class SplashScreen extends StatelessWidget {
               height: 250,
               child: Image(
                 // Tambahkan const
-                image: AssetImage('assets/logo/elemen.png'),
+                image: AssetImage('assets/images/elemen.jpeg'),
               ),
             ),
           ),

@@ -1,4 +1,5 @@
 import 'package:balap_in/screens/isilapor.dart';
+import 'package:balap_in/screens/splash.dart';
 import 'package:flutter/material.dart';
 import 'screens/homepage.dart';
 import 'screens/tutorial.dart';
@@ -19,6 +20,7 @@ class MyApp extends StatelessWidget {
         '/tutorial': (context) => const Tutorial(),
         '/lapor':(context) => const LaporScreen(),
         '/isilapor':(context) => const IsilaporScreen(),
+        '/splash':(context) => const SplashScreen(),
       },
     );
   }
