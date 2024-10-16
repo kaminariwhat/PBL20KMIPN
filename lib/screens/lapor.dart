@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 const List<String> jenis = <String>['Jalan', 'Lampu Jalan', 'Jembatan'];
-const List<String> cuaca = <String>['Hujan Lebat', 'Hujan', 'Gerimis', 'Cerah'];
+const List<String> cuaca = <String>['Hujan','Cerah'];
 
 String? selectedItem = 'Jalan'; 
 String? selectedCuaca = 'Hujan Lebat';
