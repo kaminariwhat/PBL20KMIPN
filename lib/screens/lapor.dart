@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 const List<String> jenis = <String>['Jalan', 'Lampu Jalan', 'Jembatan'];
-const List<String> cuaca = <String>['Hujan','Cerah'];
+const List<String> cuaca = <String>['Hujan', 'Cerah'];
 
 String? selectedItem = 'Jalan'; 
-String? selectedCuaca = 'Hujan Lebat';
+String? selectedCuaca = 'Hujan';
 
 double _currentSliderValue = 0;
 class LaporScreen extends StatefulWidget {
