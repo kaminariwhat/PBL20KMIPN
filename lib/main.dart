@@ -15,8 +15,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Hallo, Selamat Datang di BALAP-IN',
-      home: const HomeScreen(),
+      home: const SplashScreen(),
       routes: {
+        '/home':(context) => const HomeScreen(),
         '/tutorial': (context) => const Tutorial(),
         '/lapor':(context) => const LaporScreen(),
         '/isilapor':(context) => const IsilaporScreen(),

@@ -68,8 +68,8 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
                 zoomOption: const ZoomOption(
-                  initZoom: 16,
-                  minZoomLevel: 11,
+                  initZoom: 11,
+                  minZoomLevel: 10,
                 ),
               ),
             ),
