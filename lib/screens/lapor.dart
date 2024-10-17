@@ -212,7 +212,7 @@ class _LaporScreenState extends State<LaporScreen> {
                           fontSize: 12,
                         ),
                         contentPadding: EdgeInsets.only(
-                          top: -12,
+                          top: -8,
                           left: 9,
                         ),
                       ),
@@ -510,7 +510,7 @@ class _LaporScreenState extends State<LaporScreen> {
                   width: 340,
                   height: 30,
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
                         'Alamat',
