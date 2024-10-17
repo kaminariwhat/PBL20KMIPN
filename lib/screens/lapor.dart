@@ -93,6 +93,7 @@ class _LaporScreenState extends State<LaporScreen> {
                   ),
                 ),
 
+                //KODE WIDGET JENIS PENGADUAN
                 const SizedBox(height: 10),
                 const SizedBox(
                   width: 340,
@@ -159,6 +160,7 @@ class _LaporScreenState extends State<LaporScreen> {
                   ),
                 ),
 
+                //KODE WIDGET DESKRIPSI PENGADUAN
                 const SizedBox(height: 10),
                 const SizedBox(
                   width: 340,
@@ -218,6 +220,7 @@ class _LaporScreenState extends State<LaporScreen> {
                   ),
                 ),
                 
+                //KODE 2 WIDGET CUACA DAN PERSENTASE KERUSAKAN
                 Center(
                   child: Column(
                   children: [
@@ -350,14 +353,294 @@ class _LaporScreenState extends State<LaporScreen> {
                                   )
                                 ],
                               ),
-                              )
+                              ),
                           ],
                         ),
                       ),
                     ),
                   ],
                   ),
-                )
+                ),
+              
+              //KODE 2 WIDGET AMBIL GAMBAR DAN LOKASI MANUAL
+              SizedBox(
+                width: 350,
+                height: 150,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    //KODE AMBIL GAMBAR
+                    SizedBox(
+                      width: 150,
+                      height: 130,
+                      child: Column(
+                        children: [
+                          const SizedBox(
+                            width: 100,
+                            height: 30,
+                            child: Center(
+                              child: Text(
+                                    'Gambar',
+                                    style: TextStyle(
+                                      fontFamily: "Poppins",
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 10,
+                                    ),
+                                  ),
+                            )
+                          ),
+                          InkWell(
+                            onTap: () {},
+                            child: SizedBox(
+                            width: 150,
+                            height: 100,
+                            child: Container(
+                              decoration: BoxDecoration(
+                                color: const Color.fromARGB(255, 230, 228, 228),
+                                borderRadius: BorderRadius.circular(10),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.black.withOpacity(0.2),
+                                    blurRadius: 4,
+                                    offset: const Offset(1, 5),
+                                  ),
+                                ],
+                              ),
+                              child: const Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  SizedBox(
+                                    width: 85,
+                                    height: 70,
+                                    child: Image(
+                                      image: AssetImage('assets/images/gambar.png'),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    child: Text(
+                                      'Ambil gambar dari kamera atau galeri',
+                                      style: TextStyle(
+                                        fontFamily: "Poppins",
+                                        fontSize: 6,
+                                      ),
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+
+                    const SizedBox(width: 50),
+
+                     //KODE WIDGET LOKASI MANUAL
+                    SizedBox(
+                      width: 150,
+                      height: 130,
+                      child: Column(
+                        children: [
+                          const SizedBox(
+                            width: 100,
+                            height: 30,
+                            child: Center(
+                              child: Text(
+                                    'Lokasi',
+                                    style: TextStyle(
+                                      fontFamily: "Poppins",
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 10,
+                                    ),
+                                  ),
+                            )
+                          ),
+                          InkWell(
+                            onTap: () {},
+                            child: SizedBox(
+                            width: 150,
+                            height: 100,
+                            child: Container(
+                              decoration: BoxDecoration(
+                                color: const Color.fromARGB(255, 230, 228, 228),
+                                borderRadius: BorderRadius.circular(10),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.black.withOpacity(0.2),
+                                    blurRadius: 4,
+                                    offset: const Offset(1, 5),
+                                  ),
+                                ],
+                              ),
+                              child: const Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  SizedBox(
+                                    width: 85,
+                                    height: 70,
+                                    child: Image(
+                                      image: AssetImage('assets/images/petainput.png'),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    child: Text(
+                                      'Atur Lokasi',
+                                      style: TextStyle(
+                                        fontFamily: "Poppins",
+                                        fontSize: 6,
+                                      ),
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+                ),
+              
+              //KODE WIDGET ALAMAT LOKASI
+              const SizedBox(height: 4),
+                const SizedBox(
+                  width: 340,
+                  height: 30,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Alamat',
+                        style: TextStyle(
+                          fontFamily: "Poppins",
+                          fontWeight: FontWeight.bold,
+                          fontSize: 10,
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  height: 35,
+                  width: 350,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: const Color.fromARGB(255, 230, 228, 228),
+                      borderRadius: BorderRadius.circular(5),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.2),
+                          blurRadius: 4,
+                          offset: const Offset(1, 5),
+                        ),
+                      ],
+                    ),
+                    child: const TextField(
+                      readOnly: true,
+                      decoration: InputDecoration(
+                        border: InputBorder.none,
+                        hintText: 'Jl. Sudirman No.3, Sukajadi, Kec. Batam Kota, Kota Batam, Kepulauan Riau 29432',
+                        hintStyle: TextStyle(
+                          fontFamily: "Poppins",
+                          fontSize: 10,
+                        ),
+                        contentPadding: EdgeInsets.only(
+                          top: -12,
+                          left: 9,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+
+
+                //WIDGET DRAFT ATAU KIRIM
+              const SizedBox(height: 40),
+              SizedBox(
+                width: 350,
+                height: 30,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    //WIDGET DRAFT
+                    InkWell(
+                      onTap: () {},
+                      child: SizedBox(
+                        width: 145,
+                        height: 30,
+                        child: Container(
+                          decoration: BoxDecoration(
+                                  color: const Color.fromARGB(113, 15, 15, 15),
+                                  borderRadius: BorderRadius.circular(5),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.black.withOpacity(0.2),
+                                      blurRadius: 4,
+                                      offset: const Offset(1, 5),
+                                    ),
+                                  ],
+                                ),
+                            child: const Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text('Draft',
+                                style: TextStyle(
+                                  fontFamily: "Poppins",
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 10
+                                ),
+                                )
+                              ],
+                            ),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 60,
+                    ),
+                    //WIDGET KIRIM
+                    InkWell(
+                      onTap: () {},
+                      child: SizedBox(
+                        width: 145,
+                        height: 30,
+                        child: Container(
+                          decoration: BoxDecoration(
+                                  color: const Color.fromARGB(154, 21, 221, 21),
+                                  borderRadius: BorderRadius.circular(5),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.black.withOpacity(0.2),
+                                      blurRadius: 4,
+                                      offset: const Offset(1, 5),
+                                    ),
+                                  ],
+                                ),
+                            child: const Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text('Kirim',
+                                style: TextStyle(
+                                  fontFamily: "Poppins",
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 10
+                                ),
+                                )
+                              ],
+                            ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              //PEMISAH FOOTER
+              const SizedBox(height: 20,)
+
+
 
               ],
             ),

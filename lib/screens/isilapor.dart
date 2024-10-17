@@ -72,7 +72,7 @@ class IsilaporScreen extends StatelessWidget {
                           color:
                               Colors.black.withOpacity(0.3), // Warna bayangan
                           blurRadius: 10, // Jarak blur bayangan
-                          offset: Offset(0, 4), // Offset bayangan
+                          offset: const Offset(0, 4), // Offset bayangan
                         ),
                       ],
                     ),

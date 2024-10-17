@@ -75,6 +75,8 @@ flutter:
   - assets/images/jalanrusak.jpg
   - assets/images/wwww.png
   - assets/images/elemen.jpeg
+  - assets/images/gambar.png
+  - assets/images/petainput.png
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
