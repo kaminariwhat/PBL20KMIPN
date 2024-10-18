@@ -1,12 +1,25 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:balap_in/widgets/homewidget.dart';
 import 'package:flutter_osm_plugin/flutter_osm_plugin.dart';
+import 'package:filter_list/filter_list.dart';
 
 MapController mapController = MapController();
-class HomeScreen extends StatelessWidget {
+
+List<String> analisis = ['Sebulan', 'Dua bulan', 'tiga bulan'];
+List<String> selectedAnalisis = ['Sebulan'];
+
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
+  @override
+  _HomeScreenState createState() => _HomeScreenState();
+} 
   
+class _HomeScreenState extends State<HomeScreen> {
+  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -272,13 +285,47 @@ class HomeScreen extends StatelessWidget {
                         ),
                       ),
                     ),
+                    
+                    //TOMBOL PERIODE ANALISIS
+                    const SizedBox(height: 14,),
+                    SizedBox(
+                      height: 20,
+                      width: 350,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          SizedBox(
+                            width: 100,
+                            height: 20,
+                            child: FloatingActionButton(
+                              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
+                              backgroundColor: Colors.white,
+                              onPressed: null,
+                              child: const Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Image(
+                                    image: AssetImage('assets/images/sort.png'),
+                                  ),
+                                  Text('Analisis Berdasarkan',
+                                    style: TextStyle(
+                                    fontFamily: "Poppins",
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 7
+                                    ),
+                                  ),
+                                ],
+                              )
+                          ),
+                          )
+                        ],
+                      )
+                    ),
+                    const SizedBox(height: 5,),
 
-                    const Padding(
-                      padding: EdgeInsets.only(
-                        top: 10,
-                        bottom: 2,
-                      ),
-                      child: SizedBox(
+
+                    //TAMPILAN ANALISIS
+                    const SizedBox(
                         height: 50,
                         width: 250,
                         child: Row(
@@ -358,8 +405,8 @@ class HomeScreen extends StatelessWidget {
                           ],
                         ),
                       ),
-                    ),
-                      
+                    
+                    //LIST LAPORAN PALING BAWAH
                     ListView.builder(
                     shrinkWrap: true,
                     physics: const NeverScrollableScrollPhysics(),
@@ -384,3 +431,4 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
+
