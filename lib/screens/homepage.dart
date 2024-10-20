@@ -7,9 +7,11 @@ import 'package:filter_list/filter_list.dart';
 
 MapController mapController = MapController();
 
-List<String> analisis = ['Sebulan', 'Dua bulan', 'tiga bulan'];
-List<String> selectedAnalisis = ['Sebulan'];
+bool showAdditionalChip = false;
+bool filterSelected = false;
+bool filterAnalisisSelected = false;
 
+int selectedChipAnalisisIndex = 0;
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -19,7 +21,7 @@ class HomeScreen extends StatefulWidget {
   
 class _HomeScreenState extends State<HomeScreen> {
   
-
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -238,7 +240,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                             InkWell(
                               onTap: () {
-                                Navigator.pushNamed(context, '/splash');
+                                Navigator.pushNamed(context, '/rekomendasi');
                               },
                               child: Container(
                                 margin: const EdgeInsets.only(left: 20),
@@ -289,40 +291,183 @@ class _HomeScreenState extends State<HomeScreen> {
                     //TOMBOL PERIODE ANALISIS
                     const SizedBox(height: 14,),
                     SizedBox(
-                      height: 20,
+                      height: 25,
                       width: 350,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           SizedBox(
                             width: 100,
-                            height: 20,
-                            child: FloatingActionButton(
-                              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
-                              backgroundColor: Colors.white,
-                              onPressed: null,
-                              child: const Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Image(
-                                    image: AssetImage('assets/images/sort.png'),
+                            height: 25,
+                            child: Container(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(5),
+                                boxShadow: const [
+                                  BoxShadow(
+                                    color: Colors.grey,
+                                    offset: Offset(1.0, 3.0),
+                                    blurRadius: 3
+                                  )
+                                ]
+                              ),
+                              child: RawChip(
+                                label: const FittedBox(
+                                  fit: BoxFit.scaleDown, 
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Icon(Icons.timeline, color: Colors.black, size: 18,),
+                                      Text(
+                                        'Analisis Berdasarkan',
+                                        style: TextStyle(
+                                          fontFamily: "Poppins",
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 7, 
+                                        ),
+                                      ),
+                                    ],
                                   ),
-                                  Text('Analisis Berdasarkan',
-                                    style: TextStyle(
-                                    fontFamily: "Poppins",
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 7
-                                    ),
-                                  ),
-                                ],
-                              )
-                          ),
+                                ),
+                                selected: filterSelected,
+                                onSelected: (bool value) {
+                                  setState(() {
+                                    filterSelected = value;
+                                    showAdditionalChip = value;
+                                  });
+                                },
+                                backgroundColor: Colors.white, 
+                                selectedColor: const Color.fromARGB(255, 250, 204, 204),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(5),
+                                  side: const BorderSide(
+                                    color: Colors.white
+                                  )
+                                ),
+                                showCheckmark: false,
+                                labelPadding: const EdgeInsets.only(
+                                  top: -1,
+                                  bottom: 3
+                                ),
+                                padding: const EdgeInsets.only(
+                                  top: -1,
+                                  bottom: 3,
+                                  left: 1,
+                                  right: 1
+                                ),
+                              ),
+                            )
                           )
                         ],
                       )
                     ),
                     const SizedBox(height: 5,),
+                    
+                    if (showAdditionalChip)
+                    SizedBox(
+                        height: 40,
+                          child: ListView(
+                            padding: const EdgeInsets.only(
+                              left: 5,
+                              right: 5
+                            ),
+                            scrollDirection: Axis.horizontal,
+                            children: [
+                              SizedBox(
+                                height: 40,
+                                child: ChoiceChip(
+                                  side: BorderSide.none,
+                                  backgroundColor: const Color.fromARGB(255, 231, 230, 230),
+                                  selectedColor: const Color.fromARGB(255, 250, 204, 204),
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(20)
+                                  ),
+                                  label: const Text('Seminggu terakhir',
+                                  style: TextStyle(
+                                    fontFamily: 'Poppins',
+                                    fontSize: 9,
+                                    fontWeight: FontWeight.bold
+                                  ),), 
+                                  selected: selectedChipAnalisisIndex == 0,
+                                  onSelected: (bool value) {
+                                    setState(() {
+                                      selectedChipAnalisisIndex = 0;
+                                    });
+                                  }),
+                              ),
+                              const SizedBox(width: 4,),
+                              SizedBox(
+                                height: 40,
+                                child: ChoiceChip(
+                                  side: BorderSide.none,
+                                  backgroundColor: const Color.fromARGB(255, 231, 230, 230),
+                                  selectedColor: const Color.fromARGB(255, 250, 204, 204),
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(20)
+                                  ),
+                                  label: const Text('Sebulan terakhir',
+                                  style: TextStyle(
+                                    fontFamily: 'Poppins',
+                                    fontSize: 9,
+                                    fontWeight: FontWeight.bold
+                                  ),), 
+                                  selected: selectedChipAnalisisIndex == 1,
+                                  onSelected: (bool value) {
+                                    setState(() {
+                                      selectedChipAnalisisIndex = 1;
+                                    });
+                                  }),
+                              ),
 
+                              const SizedBox(width: 4,),
+                              SizedBox(
+                                height: 40,
+                                child: ChoiceChip(
+                                  side: BorderSide.none,
+                                  backgroundColor: const Color.fromARGB(255, 231, 230, 230),
+                                  selectedColor: const Color.fromARGB(255, 250, 204, 204),
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(20)
+                                  ),
+                                  label: const Text('Setahun terakhir',
+                                  style: TextStyle(
+                                    fontFamily: 'Poppins',
+                                    fontSize: 9,
+                                    fontWeight: FontWeight.bold
+                                  ),), 
+                                  selected: selectedChipAnalisisIndex == 2,
+                                  onSelected: (bool value) {
+                                    setState(() {
+                                      selectedChipAnalisisIndex = 2;
+                                    });
+                                  }),
+                              ),
+
+                              const SizedBox(width: 4,),
+                              SizedBox(
+                                height: 40,
+                                child: ChoiceChip(
+                                  side: BorderSide.none,
+                                  backgroundColor: const Color.fromARGB(255, 231, 230, 230),
+                                  selectedColor: const Color.fromARGB(255, 250, 204, 204),
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(20)
+                                  ),
+                                  label: const Text('Semua Periode',
+                                  style: TextStyle(
+                                    fontFamily: 'Poppins',
+                                    fontSize: 9,
+                                    fontWeight: FontWeight.bold
+                                  ),), 
+                                  selected: selectedChipAnalisisIndex == 3,
+                                  onSelected: (bool value) {
+                                    setState(() {
+                                      selectedChipAnalisisIndex = 3;
+                                    });
+                                  }),
+                              ),
+                            ],
+                          ),
+                    ),
 
                     //TAMPILAN ANALISIS
                     const SizedBox(
@@ -431,4 +576,17 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
+
+class Analisis {
+  final String? periode;
+  final String? hasil;
+  Analisis({this.periode, this.hasil});
+}
+
+List<Analisis> userList = [
+  Analisis(periode: "Sebulan terakhir", hasil: ""),
+  Analisis(periode: "Duabulan terakhir ", hasil: ""),
+  Analisis(periode: "Tigabulan terakhir ", hasil: ""),
+  Analisis(periode: "Setahun terakhir ", hasil: ""),
+];
 

@@ -7,6 +7,12 @@ class Tutorial extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+          onPressed: () {
+             Navigator.of(context).pop();
+          }, 
+          icon: const Icon(Icons.keyboard_arrow_left),
+          iconSize: 40,),
         title: const Text.rich(
           TextSpan(
             text: 'Cara Melapor',
