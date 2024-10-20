@@ -9,8 +9,8 @@ MapController mapController = MapController();
 
 bool showAdditionalChip = false;
 bool filterSelected = false;
-bool filterAnalisisSelected = false;
 
+bool filterAnalisisSelected = false;
 int selectedChipAnalisisIndex = 0;
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
