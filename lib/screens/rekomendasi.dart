@@ -1,3 +1,4 @@
+import 'package:balap_in/widgets/rekomendasiwidget.dart';
 import 'package:flutter/material.dart';
 
 bool showAdditionalChip = false;
@@ -187,8 +188,31 @@ class _RecommendationsScreenState extends State<RecommendationsScreen> {
                   ),
                   //WIDGET 3 URUTKAN END
 
-                  
+                  //WIDGET REKOMENDASI START
+                  ListView.builder(
+                    shrinkWrap: true,
+                    physics: const NeverScrollableScrollPhysics(),
+                    itemCount: 6,
+                    itemBuilder: (context, index) {
+                      List<Color> colors = [
+                          const Color.fromARGB(255, 253, 36, 36),
+                          const Color.fromARGB(255, 253, 36, 36),
+                          const Color.fromARGB(255, 249, 253, 36),
+                          const Color.fromARGB(255, 249, 253, 36),
+                          const Color.fromARGB(255, 36, 253, 36),
+                          const Color.fromARGB(255, 36, 253, 36),
+                        ];
 
+                        Color bgColor = colors[index % colors.length];
+                      return InkWell(
+                        onTap: () {
+                          Navigator.pushNamed(context, '/isilapor');
+                        },
+                        child: RekomendasiWidget(color: bgColor), 
+                      );
+                    },
+                    )
+                  //WIDGET REKOMENDASI END 
                 ],
               ),
             ),
