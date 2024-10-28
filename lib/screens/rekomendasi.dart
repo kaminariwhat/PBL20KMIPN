@@ -206,7 +206,7 @@ class _RecommendationsScreenState extends State<RecommendationsScreen> {
                         Color bgColor = colors[index % colors.length];
                       return InkWell(
                         onTap: () {
-                          Navigator.pushNamed(context, '/isilapor');
+                          Navigator.pushNamed(context, '/isirekomendasi');
                         },
                         child: RekomendasiWidget(color: bgColor), 
                       );
