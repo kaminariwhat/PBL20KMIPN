@@ -7,6 +7,7 @@ class Tutorial extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        titleSpacing: 0,
         leading: IconButton(
           onPressed: () {
              Navigator.of(context).pop();
@@ -20,13 +21,12 @@ class Tutorial extends StatelessWidget {
               fontSize: 18.0,
               fontFamily: 'Poppins',
               fontWeight: FontWeight.bold,
-              shadows: <Shadow>[
-                Shadow(
-                  offset: Offset(2.0, 2.0),
-                  blurRadius: 1.0,
-                  color: Color.fromRGBO(225, 219, 219, 0.259),
-                ),
-              ],
+              shadows: [Shadow(
+                offset: Offset(1.0, 6.0),
+                blurRadius: 10,
+                color: Colors.black26,
+              ),
+              ]
             ),
           ),
         ),

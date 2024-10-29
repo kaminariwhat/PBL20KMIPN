@@ -19,6 +19,7 @@ class _RecommendationsScreenState extends State<RecommendationsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        titleSpacing: 0,
         backgroundColor: Colors.transparent,
         leading: IconButton(
           onPressed: () {
@@ -26,12 +27,18 @@ class _RecommendationsScreenState extends State<RecommendationsScreen> {
           }, 
           icon: const Icon(Icons.keyboard_arrow_left),
           iconSize: 40,),
-        title: const Text(
-          'Area Urgensi',
-          style: TextStyle(
+          title: const Text(
+            'Area Urgensi',
+            style: TextStyle(
             fontFamily: 'Poppins',
             fontWeight: FontWeight.bold,
             fontSize: 18,
+            shadows: [Shadow(
+              offset: Offset(1.0, 6.0),
+              blurRadius: 10,
+              color: Colors.black26,
+            ),
+            ]
           ),
         ),
       ),

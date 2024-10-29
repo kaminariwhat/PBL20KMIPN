@@ -36,8 +36,8 @@ class _HomeScreenState extends State<HomeScreen> {
               fontWeight: FontWeight.bold,
               shadows: <Shadow>[
                 Shadow(
-                  offset: Offset(1.0, 4.0),
-                  blurRadius: 6,
+                  offset: Offset(1.0, 6.0),
+                  blurRadius: 10,
                   color: Colors.black26,
                 ),
               ],

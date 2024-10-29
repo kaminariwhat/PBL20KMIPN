@@ -20,17 +20,24 @@ class _IsiRekomendasiScreenState extends State<IsiRekomendasiScreen> {
           }, 
           icon: const Icon(Icons.keyboard_arrow_left),
           iconSize: 40,),
+          titleSpacing: 0,
           title: const SizedBox(
-            width: 320,
-            child: FittedBox(
+          width: 320,
+          child: FittedBox(
               child: Text(
             'Jalan Berlubang Parah Sudah 5 Bulan',
             style: TextStyle(
             fontFamily: 'Poppins',
             fontWeight: FontWeight.bold,
             fontSize: 18,
-          ),
-            ),
+             shadows: [Shadow(
+              offset: Offset(1.0, 6.0),
+              blurRadius: 10,
+              color: Colors.black26,
+                  ),
+                  ]
+                ),
+              ),
             )
           )
       ),
@@ -42,7 +49,7 @@ class _IsiRekomendasiScreenState extends State<IsiRekomendasiScreen> {
               //KODE TEXT KATEGORI
               const Padding(
                 padding: EdgeInsets.only(
-                top: 25
+                top: 20
                 ),
               child: SizedBox(
                 width: 380,
@@ -108,7 +115,8 @@ class _IsiRekomendasiScreenState extends State<IsiRekomendasiScreen> {
               //KODE GAMBAR DOKUMENTASI LAPORAN
               Padding(
                 padding: const EdgeInsets.only(
-                  top: 12
+                  top: 12,
+                  bottom: 12
                   ),
                 child: SizedBox(
                 width: 380,

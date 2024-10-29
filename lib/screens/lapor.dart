@@ -20,6 +20,7 @@ class _LaporScreenState extends State<LaporScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        titleSpacing: 0,
         leading: IconButton(
           onPressed: () {
              Navigator.of(context).pop();
@@ -36,6 +37,12 @@ class _LaporScreenState extends State<LaporScreen> {
                     fontFamily: "Poppins",
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
+                     shadows: [Shadow(
+                      offset: Offset(1.0, 6.0),
+                      blurRadius: 10,
+                      color: Colors.black26,
+                    ),
+                    ]
                   ),
                 ),
               ),
