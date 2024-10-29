@@ -34,14 +34,15 @@ class _IsiRekomendasiScreenState extends State<IsiRekomendasiScreen> {
             )
           )
       ),
-
       body: SingleChildScrollView(
         child: Center(
           child: Column(
             children: [
+
+              //KODE TEXT KATEGORI
               const Padding(
                 padding: EdgeInsets.only(
-                top: 30
+                top: 25
                 ),
               child: SizedBox(
                 width: 380,
@@ -55,9 +56,10 @@ class _IsiRekomendasiScreenState extends State<IsiRekomendasiScreen> {
                 ),
               ),
 
+              //KODE TEKS ALAMAT
               const Padding(
                 padding: EdgeInsets.only(
-                bottom: 20
+                bottom: 17
                 ),
               child: SizedBox(
                 width: 380,
@@ -71,6 +73,7 @@ class _IsiRekomendasiScreenState extends State<IsiRekomendasiScreen> {
                 ),
               ),
 
+              //KODE TEKS DOKUMENTASI LAPORAN
               const Padding(
                 padding: EdgeInsets.only(
                 ),
@@ -86,6 +89,7 @@ class _IsiRekomendasiScreenState extends State<IsiRekomendasiScreen> {
                 ),
               ),
               
+              //KODE GARIS BATAS TEKS DOKUMENTASI LAPORAN DENGAN GAMBAR
               const SizedBox(
                 height: 1,
                 child: Row(
@@ -101,7 +105,37 @@ class _IsiRekomendasiScreenState extends State<IsiRekomendasiScreen> {
                 ),
               ),
 
-              
+              //KODE GAMBAR DOKUMENTASI LAPORAN
+              Padding(
+                padding: const EdgeInsets.only(
+                  top: 12
+                  ),
+                child: SizedBox(
+                width: 380,
+                child: Wrap(
+                  spacing: 9.0,
+                  runSpacing: 12.0, 
+                  children: List.generate(20, (index) {
+                    return InkWell(
+                      onTap: () {
+                        Navigator.pushNamed(context, '/isilapor');
+                      },
+                      child: const SizedBox(
+                        width: 185,
+                        height: 110,
+                        child: FittedBox(
+                          fit: BoxFit.fill,
+                          child: Image(
+                            image: AssetImage('assets/images/jalanrusak.jpg') 
+                            ),
+                        ),
+                      ),
+                    );
+                  }),
+                ),
+              ),
+              )
+
 
             ],
           ),
