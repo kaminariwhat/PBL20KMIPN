@@ -68,9 +68,8 @@ class RekomendasiWidget extends StatelessWidget {
                     ),
                     child: const Row(
                       children: [
-                        Icon(
-                          Icons.shield_rounded,
-                          color: Colors.orange,
+                        Image(
+                          image: AssetImage('assets/images/warningshield.png')
                         ),
                         SizedBox(width: 2,),
                         Text(

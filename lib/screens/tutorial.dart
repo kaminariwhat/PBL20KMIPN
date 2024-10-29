@@ -13,11 +13,13 @@ class Tutorial extends StatelessWidget {
              Navigator.of(context).pop();
           }, 
           icon: const Icon(Icons.keyboard_arrow_left),
+          color: const Color.fromRGBO(5, 5, 5, 0.612),
           iconSize: 40,),
         title: const Text.rich(
           TextSpan(
             text: 'Cara Melapor',
             style: TextStyle(
+              color: Color.fromRGBO(5, 5, 5, 0.612),
               fontSize: 18.0,
               fontFamily: 'Poppins',
               fontWeight: FontWeight.bold,
