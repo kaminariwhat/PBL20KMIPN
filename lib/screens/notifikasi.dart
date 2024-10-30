@@ -1,0 +1,55 @@
+import 'package:flutter/material.dart';
+
+
+class NotificationsScreen extends StatefulWidget {
+  const NotificationsScreen({super.key});
+
+  @override
+  _NotificationsScreenState createState() => _NotificationsScreenState();
+
+}
+
+class _NotificationsScreenState extends State<NotificationsScreen> {
+
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        titleSpacing: 0,
+        backgroundColor: Colors.white,
+        leading: IconButton(
+          onPressed: () {
+             Navigator.of(context).pop();
+          }, 
+          icon: const Icon(Icons.keyboard_arrow_left),
+          color: const Color.fromRGBO(5, 5, 5, 0.612),
+          iconSize: 40,),
+          title: const Row(
+          children: [
+            Text('Pemberitahuan',
+            style: TextStyle(
+              color: Color.fromRGBO(5, 5, 5, 0.612),
+              fontSize: 18.0,
+              fontFamily: 'Poppins',
+              fontWeight: FontWeight.bold,
+              shadows: <Shadow>[
+                      Shadow(
+                        offset: Offset(1.0, 6.0),
+                        blurRadius: 10,
+                        color: Colors.black26,
+                      ),
+              ]
+            ),
+            ),
+          ],
+        ),
+      ),
+      
+      body: Column(
+        
+      ),
+
+    );
+  }
+}

@@ -56,13 +56,31 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
 
-          InkWell(
-            onTap: () {
-              Navigator.pushNamed(context, '/isilapor');
-            },
-              child: const Icon(
-                Icons.notifications,
-            ),
+          Center(
+                child: Container(
+                  height: 32,
+                  width: 32,
+                  decoration: BoxDecoration(
+                    color: const Color.fromARGB(255, 250, 204, 204),
+                    shape: BoxShape.circle,
+                    boxShadow: [
+                      BoxShadow(
+                          color: Colors.black.withOpacity(0.2), 
+                          blurRadius: 4, 
+                          offset: const Offset(3, 5), 
+                      )
+                    ]
+                  ),
+                  child: InkWell(
+                  borderRadius: BorderRadius.circular(20),
+                  onTap: () {
+                  Navigator.pushNamed(context, '/notifikasi');
+                },
+                  child: const Icon(
+                    Icons.notifications,
+                ),
+                ),
+              ),
           )
           ]
         ),

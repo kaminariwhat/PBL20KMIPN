@@ -1,5 +1,6 @@
 import 'package:balap_in/screens/isilapor.dart';
 import 'package:balap_in/screens/isirekomendasi.dart';
+import 'package:balap_in/screens/notifikasi.dart';
 import 'package:balap_in/screens/splash.dart';
 import 'package:flutter/material.dart';
 import 'screens/homepage.dart';
@@ -25,6 +26,7 @@ class MyApp extends StatelessWidget {
         '/isilapor':(context) => const IsilaporScreen(),
         '/rekomendasi':(context) => const RecommendationsScreen(),
         '/isirekomendasi':(context) => const IsiRekomendasiScreen(),
+        '/notifikasi':(context) => const NotificationsScreen(),
       },
     );
   }
