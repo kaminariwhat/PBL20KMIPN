@@ -584,19 +584,22 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     
                     //LIST LAPORAN PALING BAWAH
-                    ListView.builder(
-                    shrinkWrap: true,
-                    physics: const NeverScrollableScrollPhysics(),
-                    itemCount: 6,
-                    itemBuilder: (context, index) {
-                      return InkWell(
-                        onTap: () {
-                          Navigator.pushNamed(context, '/isilapor');
-                        },
-                        child: const HomeWidget(), 
-                      );
-                    },
-                  )
+                    SizedBox(
+                      width: 350,
+                      child: ListView.builder(
+                      shrinkWrap: true,
+                      physics: const NeverScrollableScrollPhysics(),
+                      itemCount: 6,
+                      itemBuilder: (context, index) {
+                        return InkWell(
+                          onTap: () {
+                            Navigator.pushNamed(context, '/isilapor');
+                          },
+                          child: const HomeWidget(), 
+                        );
+                      },
+                                        ),
+                    )
 
                   ],
                 ),

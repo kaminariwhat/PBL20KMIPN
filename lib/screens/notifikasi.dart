@@ -46,8 +46,25 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
         ),
       ),
       
-      body: Column(
-        
+      body: Stack(
+        children: [
+          Positioned(
+            top: -50, 
+            left: -75,
+            child: Container(
+              width: 250,
+              height: 250,
+              decoration: const BoxDecoration(
+                color: Color(0xFFF7E0E0),
+                shape: BoxShape.circle,
+              ),
+            ),
+          ),
+
+          Center(
+            
+          )
+        ],
       ),
 
     );
