@@ -78,6 +78,48 @@ class Tutorial extends StatelessWidget {
               ),
             ),
           ),
+
+          Padding(
+            padding: const EdgeInsets.only(
+              top: 20,
+              bottom: 30,
+              ),
+            child: InkWell(
+              onTap: () {
+                Navigator.pushNamed(context, '/lapor');
+              },
+              child: SizedBox(
+              width: 200,
+              height: 30,
+                child: Container(
+                decoration: BoxDecoration(
+                color: const Color.fromARGB(154, 21, 221, 21),
+                borderRadius: BorderRadius.circular(5),
+                boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.2),
+                  blurRadius: 4,
+                  offset: const Offset(1, 5),
+                                        ),
+                                      ],
+                                    ),
+                                child: const Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text('Lapor Sekarang',
+                                    style: TextStyle(
+                                      fontFamily: "Poppins",
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 10
+                                    ),
+                                    )
+                                  ],
+                                ),
+                            ),
+                          ),
+                        ),
+          ),
+
         ],
         ),
         )
