@@ -26,31 +26,45 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text.rich(
-          TextSpan(
-            text: 'Halo, Selamat Datang di ',
-            style: TextStyle(
-              color: Color.fromRGBO(5, 5, 5, 0.612),
-              fontSize: 18.0,
-              fontFamily: 'Poppins',
-              fontWeight: FontWeight.bold,
-              shadows: <Shadow>[
-                Shadow(
-                  offset: Offset(1.0, 6.0),
-                  blurRadius: 10,
-                  color: Colors.black26,
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            const Text.rich(
+            TextSpan(
+              text: 'Halo, Selamat Datang di ',
+              style: TextStyle(
+                color: Color.fromRGBO(5, 5, 5, 0.612),
+                fontSize: 18.0,
+                fontFamily: 'Poppins',
+                fontWeight: FontWeight.bold,
+                shadows: <Shadow>[
+                  Shadow(
+                    offset: Offset(1.0, 6.0),
+                    blurRadius: 10,
+                    color: Colors.black26,
+                  ),
+                ],
+              ),
+              children: <TextSpan>[
+                TextSpan(
+                  text: 'BALAP-IN',
+                  style: TextStyle(
+                    color: Colors.red,
+                  ),
                 ),
               ],
             ),
-            children: <TextSpan>[
-              TextSpan(
-                text: 'BALAP-IN',
-                style: TextStyle(
-                  color: Colors.red,
-                ),
-              ),
-            ],
           ),
+
+          InkWell(
+            onTap: () {
+              Navigator.pushNamed(context, '/isilapor');
+            },
+              child: const Icon(
+                Icons.notifications,
+            ),
+          )
+          ]
         ),
       ),
 
