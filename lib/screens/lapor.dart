@@ -23,7 +23,7 @@ class _LaporScreenState extends State<LaporScreen> {
         titleSpacing: 0,
         leading: IconButton(
           onPressed: () {
-             Navigator.of(context).pop();
+             Navigator.of(context).popUntil((route) => route.isFirst);
           }, 
           icon: const Icon(Icons.keyboard_arrow_left),
           color: const Color.fromRGBO(5, 5, 5, 0.612),
