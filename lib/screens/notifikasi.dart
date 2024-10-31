@@ -70,10 +70,10 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
                 itemBuilder: (context, index) {
                   List<Color> colors = [
                             const Color.fromARGB(255, 253, 36, 36),
-                            const Color.fromARGB(255, 253, 36, 36),
-                            const Color.fromARGB(255, 249, 253, 36),
-                            const Color.fromARGB(255, 249, 253, 36),
                             const Color.fromARGB(255, 36, 253, 36),
+                            const Color.fromARGB(255, 249, 253, 36),
+                            const Color.fromARGB(255, 249, 253, 36),
+                            const Color.fromARGB(255, 253, 36, 36),
                             const Color.fromARGB(255, 36, 253, 36),
                           ];
         

@@ -145,27 +145,34 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                         child: const SizedBox(
                         width: 340,
-                        height: 40,
-                        child: TextField(
-                          cursorColor: Colors.black,
-                          cursorHeight: 20,
-                          decoration: InputDecoration(
-                            fillColor: Colors.white,
-                            filled: true,
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(9)
+                        height: 45,
+                        child: Align(
+                          alignment: Alignment.centerLeft,
+                          child: TextField(
+                            style: TextStyle(
+                              fontFamily: 'Poppins',
+                              fontSize: 11
+                            ),
+                            cursorColor: Colors.black,
+                            cursorHeight: 20,
+                            decoration: InputDecoration(
+                              fillColor: Colors.white,
+                              filled: true,
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(9)
+                                ),
+                              borderSide: BorderSide.none
                               ),
-                            borderSide: BorderSide.none
-                            ),
-                            hintText: 'Cari Laporan',
-                            hintStyle: TextStyle(
-                              fontFamily: "Poppins",
-                              fontSize: 11,
-                            ),
-                            suffixIcon: Icon(
-                              color: Colors.black,
-                              Icons.search,
+                              hintText: 'Cari Laporan',
+                              hintStyle: TextStyle(
+                                fontFamily: "Poppins",
+                                fontSize: 11,
+                              ),
+                              suffixIcon: Icon(
+                                color: Colors.black,
+                                Icons.search,
+                              ),
                             ),
                           ),
                         ),
